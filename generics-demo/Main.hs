@@ -1,4 +1,12 @@
+{-# LANGUAGE DefaultSignatures #-}
+{-# LANGUAGE DeriveAnyClass    #-}
+{-# LANGUAGE DeriveGeneric     #-}
+{-# LANGUAGE FlexibleContexts  #-}
+{-# LANGUAGE FlexibleInstances #-}
+{-# LANGUAGE TypeOperators     #-}
+
 module Main where
+import GHC.Generics
 
 main :: IO ()
 main = do
@@ -12,16 +20,31 @@ data Foo
     = Zero
     | One Int
     | Two Bool Char
-    deriving (Show)
+    deriving (Generic, Show, ZeroArgConstructor)
 
 class ZeroArgConstructor a where
     isZeroArg :: a -> Bool
 
-instance ZeroArgConstructor Foo where
-    isZeroArg Zero      = True
-    isZeroArg (One _)   = False
-    isZeroArg (Two _ _) = False
+    default isZeroArg :: (Generic a, GZeroArgConstructor (Rep a)) => a -> Bool
+    isZeroArg = gIsZeroArg . from
 
-instance ZeroArgConstructor (Maybe a) where
-    isZeroArg Nothing  = True
-    isZeroArg (Just _) = False
+instance ZeroArgConstructor (Maybe a)
+
+class GZeroArgConstructor f where
+    gIsZeroArg :: f x -> Bool
+
+instance GZeroArgConstructor U1 where
+    gIsZeroArg _ = True
+
+instance GZeroArgConstructor (K1 i c) where
+    gIsZeroArg _ = False
+
+instance (GZeroArgConstructor a, GZeroArgConstructor b) => GZeroArgConstructor (a :+: b) where
+    gIsZeroArg (L1 x) = gIsZeroArg x
+    gIsZeroArg (R1 x) = gIsZeroArg x
+
+instance (GZeroArgConstructor a, GZeroArgConstructor b) => GZeroArgConstructor (a :*: b) where
+    gIsZeroArg _ = False
+
+instance GZeroArgConstructor f => GZeroArgConstructor (M1 i c f) where
+    gIsZeroArg (M1 x) = gIsZeroArg x
