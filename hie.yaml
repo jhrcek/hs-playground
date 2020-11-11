@@ -1,0 +1,7 @@
+cradle:
+  stack:
+    - path: "./generics-demo/Main.hs"
+      component: "hs-playground:exe:generics-demo"
+
+    - path: "./servant-demo/Main.hs"
+      component: "hs-playground:exe:servant-demo"
