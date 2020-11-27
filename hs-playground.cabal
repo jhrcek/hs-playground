@@ -36,3 +36,10 @@ executable servant-demo
         servant,
         servant-server,
         warp
+
+executable monad-transformers-demo
+    main-is:          Main.hs
+    hs-source-dirs:   monad-transformers-demo
+    default-language: Haskell2010
+--    ghc-options:      -Wall
+    build-depends:    base >=4.7 && <5

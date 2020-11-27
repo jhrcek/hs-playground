@@ -5,3 +5,6 @@ cradle:
 
     - path: "./servant-demo/Main.hs"
       component: "hs-playground:exe:servant-demo"
+
+    - path: "./monad-transformers-demo/Main.hs"
+      component: "hs-playground:exe:monad-transformers-demo"
