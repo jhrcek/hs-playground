@@ -8,3 +8,6 @@ cradle:
 
     - path: "./monad-transformers-demo/Main.hs"
       component: "hs-playground:exe:monad-transformers-demo"
+
+    - path: "./contravariant-demo/Main.hs"
+      component: "hs-playground:exe:contravariant-demo"
