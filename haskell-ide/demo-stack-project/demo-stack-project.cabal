@@ -9,39 +9,40 @@ author:             Author name here
 homepage:           https://github.com/githubuser/demo-stack-project#readme
 bug-reports:        https://github.com/githubuser/demo-stack-project/issues
 description:
-    Please see the README on GitHub at <https://github.com/githubuser/demo-stack-project#readme>
+  Please see the README on GitHub at <https://github.com/githubuser/demo-stack-project#readme>
 
 build-type:         Simple
 extra-source-files:
-    README.md
-    ChangeLog.md
+  ChangeLog.md
+  README.md
 
 source-repository head
-    type:     git
-    location: https://github.com/githubuser/demo-stack-project
+  type:     git
+  location: https://github.com/githubuser/demo-stack-project
 
 library
-    exposed-modules:  Lib
-    hs-source-dirs:   src
-    default-language: Haskell2010
-    build-depends:    base >=4.7 && <5
-                    , optics-core
+  exposed-modules:  Lib
+  hs-source-dirs:   src
+  default-language: Haskell2010
+  build-depends:
+    , base         >=4.7 && <5
+    , optics-core
 
 executable demo-stack-project-exe
-    main-is:          Main.hs
-    hs-source-dirs:   app
-    default-language: Haskell2010
-    ghc-options:      -threaded -rtsopts -with-rtsopts=-N
-    build-depends:
-        base >=4.7 && <5,
-        demo-stack-project
+  main-is:          Main.hs
+  hs-source-dirs:   app
+  default-language: Haskell2010
+  ghc-options:      -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+    , base                >=4.7 && <5
+    , demo-stack-project
 
 test-suite demo-stack-project-test
-    type:             exitcode-stdio-1.0
-    main-is:          Spec.hs
-    hs-source-dirs:   test
-    default-language: Haskell2010
-    ghc-options:      -threaded -rtsopts -with-rtsopts=-N
-    build-depends:
-        base >=4.7 && <5,
-        demo-stack-project
+  type:             exitcode-stdio-1.0
+  main-is:          Spec.hs
+  hs-source-dirs:   test
+  default-language: Haskell2010
+  ghc-options:      -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+    , base                >=4.7 && <5
+    , demo-stack-project
