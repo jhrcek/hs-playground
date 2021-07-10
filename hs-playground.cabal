@@ -48,3 +48,17 @@ executable contravariant-demo
   ghc-options:      -Wall
   default-language: Haskell2010
   build-depends:    base >=4.7 && <5
+
+executable aeson-demo
+  main-is:          Main.hs
+  other-modules:
+    AesonQQ
+
+  hs-source-dirs:   aeson-demo
+  ghc-options:      -Wall
+  default-language: Haskell2010
+  build-depends:
+    , aeson
+    , aeson-qq
+    , base              >=4.7 && <5
+    , template-haskell
