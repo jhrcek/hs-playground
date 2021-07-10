@@ -1,7 +1,6 @@
 module Main where
 
 import Data.Functor.Contravariant
-import Data.List
 
 
 main :: IO ()

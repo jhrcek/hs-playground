@@ -1,0 +1,21 @@
+cabal-version:      3.0
+name:               template-haskell-intro
+version:            0.1.0.0
+license:            BSD-3-Clause
+license-file:       LICENSE
+author:             Jan Hrček
+maintainer:         honza.hrk@gmail.com
+category:           Demo
+extra-source-files: CHANGELOG.md
+
+executable template-haskell-intro
+  main-is:          Main.hs
+  other-modules:    TupleProjections
+  ghc-options: -dth-dec-file
+  build-depends:
+    , base
+    , template-haskell
+    , optics-core, optics-th
+
+  hs-source-dirs:   src
+  default-language: Haskell2010
