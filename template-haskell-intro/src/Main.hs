@@ -1,25 +1,27 @@
+{-# LANGUAGE QuasiQuotes #-}
 {-# LANGUAGE TemplateHaskell #-}
-{-# OPTIONS_GHC -ddump-splices -dsuppress-uniques  #-}
+{-# OPTIONS_GHC -ddump-splices -dsuppress-uniques -dsuppress-all #-}
+
 module Main where
 
-import TupleProjections 
+import Declarations
+import Expressions
+import QMonad
+import QuasiQuoters
 
 
-$buildProjections
-
-
-
-{-
->>> p2_1 (1, 2)
-1
->>> p2_2 (1, 2)
-2
--}
 main :: IO ()
-main = do
-    print $ p2_1 (1, 2)
-    print $ p2_2 (1, 2)
+main = pure ()
 
+-- one = $(oneOnThursday)
 
-foo :: Int -> Int
-foo = $$(mkPow 3)
+-- x = [demo|Hello|]
+
+-- y :: [demo|Bye|]
+-- y = 1
+
+-- ns :: NumericString
+-- ns = [numStr|123|]
+
+-- badNs :: NumericString
+-- badNs = [numStr|abc|]
