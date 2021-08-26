@@ -4,3 +4,4 @@ packages:
 - ./reanimate-demo
 - ./haskell-ide/demo-stack-project
 - ./template-haskell-intro
+- ./type-classes
