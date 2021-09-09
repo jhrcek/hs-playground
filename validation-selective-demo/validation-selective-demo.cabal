@@ -1,0 +1,22 @@
+cabal-version: 2.4
+name:          validation-selective-demo
+version:       0.1.0.0
+author:        Jan Hrček
+maintainer:    honza.hrk@gmail.com
+
+executable validation-selective-demo
+  hs-source-dirs:   app
+  main-is:          Main.hs
+  other-modules:
+    EitherDemo
+    Person
+    ValidationDemo
+
+  other-extensions: NoImplicitPrelude
+  build-depends:
+    , base                  ^>=4.14.1.0
+    , relude
+    , uuid-types
+    , validation-selective
+
+  default-language: Haskell2010
