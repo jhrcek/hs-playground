@@ -1,11 +1,11 @@
-cabal-version:      3.0
+cabal-version:      2.4
 name:               hs-playground
 version:            0.1.0.0
 license:            BSD-3-Clause
 license-file:       LICENSE
-copyright:          2020 Author name here
+copyright:          2020 Jan Hrček
 maintainer:         example@example.com
-author:             Author name here
+author:             Jan Hrček
 homepage:           https://github.com/jhrcek/hs-playground#readme
 synopsis:           Collection of random Haskell examples
 description:        Collection of random Haskell examples.
