@@ -1,17 +1,17 @@
-{-# LANGUAGE DeriveGeneric     #-}
-{-# LANGUAGE InstanceSigs      #-}
+{-# LANGUAGE DeriveGeneric #-}
+{-# LANGUAGE InstanceSigs #-}
 {-# LANGUAGE OverloadedStrings #-}
-{-# LANGUAGE QuasiQuotes       #-}
-{-# LANGUAGE TemplateHaskell   #-}
-{-# LANGUAGE TypeApplications  #-}
+{-# LANGUAGE QuasiQuotes #-}
+{-# LANGUAGE TemplateHaskell #-}
+{-# LANGUAGE TypeApplications #-}
 
 module Main where
 
 --import qualified AesonQQ
-import           Data.Aeson
+import Data.Aeson
 
-import           Data.Aeson.QQ
-import           GHC.Generics  (Generic)
+import Data.Aeson.QQ
+import GHC.Generics (Generic)
 
 
 --import Data.Aeson.TH
@@ -29,10 +29,9 @@ main = do
     print $ eitherDecode @[Color] colorsJson
 
 
-
 data Person = Person
     { _name :: String
-    , _age  :: Int
+    , _age :: Int
     }
     deriving (Show, Generic)
 
@@ -59,7 +58,7 @@ instance ToJSON Color
 
 
 myOptions :: Options
-myOptions = defaultOptions{sumEncoding = defaultTaggedObject }
+myOptions = defaultOptions{sumEncoding = defaultTaggedObject}
 
 
 instance FromJSON Color where

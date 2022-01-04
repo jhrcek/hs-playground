@@ -1,13 +1,14 @@
-{-# LANGUAGE DataKinds     #-}
+{-# LANGUAGE DataKinds #-}
 {-# LANGUAGE TypeOperators #-}
 
-
 module Main where
+
 import Data.Data (Proxy (..))
 import Network.Wai.Handler.Warp (run)
 import Servant (Handler)
 import Servant.API (Capture, Get, JSON, type (:>))
 import Servant.Server (Application, Server, serve)
+
 
 {-
 import Web.Scotty
@@ -23,13 +24,16 @@ main = scotty 3000 $
 
 type HelloAPI = Capture "word" String :> Get '[JSON] String
 
+
 -- λ> :kind! MyServer
 -- MyServer :: *
 -- = Int -> Handler String
 type MyServer = Server HelloAPI
 
-myHandler :: String  -> Handler String
+
+myHandler :: String -> Handler String
 myHandler word = pure $ "Scotty " <> word <> " me up!"
+
 
 main :: IO ()
 main =

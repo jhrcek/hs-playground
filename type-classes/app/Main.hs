@@ -25,4 +25,3 @@ main = do
     -- Pure implementation
     -- Will print  ((), E5.S ["Tom"] ["What's your name?", "Hello Jan"] 1)
     print $ E5.runApp2 E5.demoState E5.handler
-    
