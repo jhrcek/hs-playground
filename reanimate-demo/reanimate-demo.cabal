@@ -1,7 +1,9 @@
 cabal-version:      2.4
 name:               reanimate-demo
 version:            0.1.0.0
-homepage:           https://github.com/githubuser/reanimate-demo#readme
+homepage:
+  https://github.com/jhrcek/hs-playground/reanimate-demo#readme
+
 license:            BSD-3-Clause
 license-file:       LICENSE
 author:             Jan Hrček
@@ -16,6 +18,6 @@ executable reanimate-demo
   main-is:          Main.hs
   default-language: Haskell2010
   build-depends:
-      base           >=4.7 && <5
+    , base           >=4.7 && <5
     , reanimate
     , reanimate-svg

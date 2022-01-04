@@ -51,9 +51,7 @@ executable contravariant-demo
 
 executable aeson-demo
   main-is:          Main.hs
-  other-modules:
-    AesonQQ
-
+  other-modules:    AesonQQ
   hs-source-dirs:   aeson-demo
   ghc-options:      -Wall
   default-language: Haskell2010
