@@ -39,12 +39,18 @@ executable hspec-demo-exe
 test-suite hspec-demo-test
   type:             exitcode-stdio-1.0
   main-is:          Spec.hs
-  other-modules:    HooksSpec
+  other-modules:
+    BasicSpec
+    HooksSpec
+    ItSpec
+
   hs-source-dirs:   test
   ghc-options:      -threaded -rtsopts -with-rtsopts=-N
   build-depends:
     , base        >=4.7   && <5
     , hspec       ^>=2.9.4
     , hspec-demo
+    , QuickCheck
+    , stm
 
   default-language: Haskell2010
