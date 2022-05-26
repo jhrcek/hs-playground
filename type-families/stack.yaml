@@ -1,0 +1,5 @@
+resolver: lts-19.8
+packages:
+  - .
+extra-deps:
+  - elm-street-0.2.0.0@sha256:0fd5fc2577342d415fefcc6842cecc9aabfdb2e8e9d51b78fbf4fa8071c7ea13,4478
