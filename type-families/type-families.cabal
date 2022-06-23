@@ -15,11 +15,13 @@ library
   hs-source-dirs:   src
   exposed-modules:  ServantDemo
                   , ElmStreetDemo
-  main-is:          Main.hs
+                  , Examples
+                  , TypeClasses
   default-language: Haskell2010
   build-depends:
       base            >=4.7 && <5
     , elm-street
+    , mtl
     , servant
     , servant-client
     , servant-server
