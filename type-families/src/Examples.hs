@@ -75,3 +75,11 @@ twoElem = Cons 2 oneElem
 nonsense :: Vec Int Z
 nonsense = undefined
 
+
+{-
+kind             Type   Type     Nat           Type         Symbol    
+types            Int    Nat      Z, S Z, ...   String      "person", "dog"         "person" :> Capture Int :> Get '[JSON] Person     ..can be transformed..    Int -> Handler Person
+values (terms)   1      Z        -no values    "person"     -no values              ??  Application (wai),   client :: Int -> Handler Person (servant-client)
+
+
+-}
