@@ -1,4 +1,9 @@
-# brick-intro
+---
+patat:
+  slideLevel: 2
+...
+
+# Introduction to Brick (TUI library)
 
 Introduction to [brick](https://github.com/jtdaugherty/brick) library for building TUIs (Terminal User Interfaces).
 
@@ -43,4 +48,8 @@ A brick application consists of:
 - styling - change color of text / background / style of text
 
 ## Live coding examples
-- 
+- hello world
+- counter
+- data-explorer
+
+# Q & A
